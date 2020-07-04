@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <editline/readline.h>
-#include <histedit.h>
 
 const char * VERSION = "0.0.1";
 const char * PROMPT = "mol> ";
