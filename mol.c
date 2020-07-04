@@ -1,17 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <editline/readline.h>
+#include <histedit.h>
 
 const char * VERSION = "0.0.1";
-static char input[2048];
+const char * PROMPT = "mol> ";
 
-
-int main(int argv, char ** argc) {
+int main() {
   printf("mol version %s\n", VERSION);
   puts("Perss CTRL-C to exit\n");
 
   while(1) {
-    fputs("mol> ", stdout);
-    fgets(input, 2048, stdin);
-    printf("%s", input);
+    char * input = readline(PROMPT);
+    add_history(input);
+    printf("%s\n", input);
+    free(input);
   }
   return 0;
 }
